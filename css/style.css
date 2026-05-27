@@ -1670,9 +1670,9 @@ footer {
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
-  padding: 10px 0;
+  padding: 12px 0 calc(15px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-  padding-bottom: env(safe-area-inset-bottom, 10px);
+  transform: translateZ(0);
 }
 
 .nav-item {
