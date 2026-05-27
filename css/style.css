@@ -565,7 +565,7 @@ img {
   justify-content: center;
   overflow: visible;
   padding-top: 85px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .hero-bg {
@@ -836,7 +836,7 @@ img {
    ABOUT SECTION
    ═══════════════════════════════════ */
 .about-section {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: var(--white);
 }
 
@@ -1469,7 +1469,7 @@ footer {
   }
 
   .hamburger {
-    display: block;
+    display: none; /* Replaced by bottom nav */
   }
 
   /* Hero */
@@ -1477,6 +1477,12 @@ footer {
     min-height: auto;
     padding-top: 100px;
     padding-bottom: 80px;
+  }
+
+  .hero-container {
+    width: 100%;
+    padding: 0 15px;
+    gap: 15px;
   }
 
   .hero-content h1 {
@@ -1488,8 +1494,7 @@ footer {
   }
 
   .hero-actions {
-    flex-direction: column;
-    gap: 20px;
+    display: none; /* Hidden on mobile to save space and rely on bottom nav */
   }
 
   .billion-dollar-frame {
@@ -1648,5 +1653,68 @@ footer {
   .btn-large {
     padding: 14px 28px;
     font-size: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════
+   MOBILE BOTTOM NAVIGATION
+   ═══════════════════════════════════ */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  padding-bottom: env(safe-area-inset-bottom, 10px);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.7;
+  flex: 1;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover, .nav-item:active {
+  opacity: 1;
+  color: var(--teal);
+}
+
+.nav-item.call-action {
+  color: var(--teal);
+  opacity: 1;
+  font-weight: bold;
+}
+
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 6px;
+  stroke: currentColor;
+}
+
+.nav-item span {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  body {
+    padding-bottom: 70px; /* Add padding so footer doesn't hide behind nav */
   }
 }

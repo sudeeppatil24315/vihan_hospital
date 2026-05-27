@@ -1,28 +1,7 @@
 // main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Menu Toggle
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu-overlay');
-  const closeMenuBtn = document.querySelector('.close-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-menu-content a');
 
-  function openMenu() {
-    mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  hamburger.addEventListener('click', openMenu);
-  closeMenuBtn.addEventListener('click', closeMenu);
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
 
   // Sticky Header on Scroll
   const header = document.getElementById('site-header');
