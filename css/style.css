@@ -352,6 +352,14 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 55px;
+  width: auto;
+  border-radius: 4px; /* Optional: slight rounding for the image */
+  object-fit: contain;
 }
 
 .brand-text {
@@ -1028,33 +1036,30 @@ img {
 }
 
 .spotlight-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.glass-badge-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px 20px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--white);
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100px;
 }
 
-.glass-badge-card:hover {
-  background: rgba(0, 180, 216, 0.15);
-  border-color: var(--teal);
-  transform: translateY(-5px);
+.doc-bio {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
+.doc-bio h3 {
+  color: var(--teal);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.doc-bio p {
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
 
 /* ═══════════════════════════════════
    WHY CHOOSE
