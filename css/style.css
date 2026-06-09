@@ -50,37 +50,65 @@ html {
   visibility: hidden;
 }
 
-.medical-pulse {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  animation: pulse 1.5s infinite ease-in-out;
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cross-v, .cross-h {
-  position: absolute;
-  background-color: var(--teal);
-  border-radius: 4px;
+.loader-logo {
+  width: 90px;
+  margin-bottom: 20px;
+  animation: floatLogo 3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
 }
 
-.cross-v {
-  width: 12px;
-  height: 50px;
-  top: 0;
-  left: 19px;
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.cross-h {
-  width: 50px;
-  height: 12px;
-  top: 19px;
-  left: 0;
+.ecg-container {
+  width: 200px;
+  height: 100px;
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.8); opacity: 0.5; filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0.8)); }
-  50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 20px rgba(0, 180, 216, 0.8)); }
-  100% { transform: scale(0.8); opacity: 0.5; filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0)); }
+.ecg-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ecg-line {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawEcg 2.5s infinite linear;
+  filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.8));
+}
+
+@keyframes drawEcg {
+  0% { stroke-dashoffset: 300; }
+  40%, 60% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -300; }
+}
+
+.loader-text {
+  margin-top: 10px;
+  color: var(--teal);
+  font-family: var(--font-heading);
+  letter-spacing: 4px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  animation: pulseText 2s infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; text-shadow: 0 0 10px var(--teal); }
 }
 
 body {
