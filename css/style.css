@@ -28,6 +28,61 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ═══════════════════════════════════
+   PRELOADER
+   ═══════════════════════════════════ */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.medical-pulse {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.cross-v, .cross-h {
+  position: absolute;
+  background-color: var(--teal);
+  border-radius: 4px;
+}
+
+.cross-v {
+  width: 12px;
+  height: 50px;
+  top: 0;
+  left: 19px;
+}
+
+.cross-h {
+  width: 50px;
+  height: 12px;
+  top: 19px;
+  left: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0.8)); }
+  50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 20px rgba(0, 180, 216, 0.8)); }
+  100% { transform: scale(0.8); opacity: 0.5; filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0)); }
+}
+
 body {
   font-family: var(--font-body);
   color: var(--gray-dark);

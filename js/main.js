@@ -1,5 +1,15 @@
 // main.js
 
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 800); // Matches CSS transition duration
+  }
+});
 document.addEventListener('DOMContentLoaded', () => {
 
 
