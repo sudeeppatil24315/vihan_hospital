@@ -162,4 +162,17 @@ document.addEventListener('DOMContentLoaded', () => {
       heroBtn.style.setProperty('--spotlight-y', y + 'px');
     });
   }
+
+  // Video Skeleton Loading
+  const videos = document.querySelectorAll('.review-video');
+  videos.forEach(video => {
+    // If video is already loaded by the time JS runs
+    if (video.readyState >= 3) {
+      video.parentElement.classList.remove('skeleton-loading');
+    } else {
+      video.addEventListener('canplay', () => {
+        video.parentElement.classList.remove('skeleton-loading');
+      });
+    }
+  });
 });
